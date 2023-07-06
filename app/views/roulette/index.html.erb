@@ -1,0 +1,674 @@
+
+<%= render "shared/header" %>
+ <div class="header-name">
+      <h1>WEBルーレット</h1>
+    </div>
+
+  
+    <div id="canvas"></div>
+    <div class="bottun">
+      <button type="button" class="reset" id="reset" onclick="reset()">
+        リセット
+      </button>
+      <button type="button" class="start" id="start" onclick="start()">
+        スタート！
+      </button>
+      <button
+        type="button"
+        class="stop"
+        id="stop"
+        onclick="stop()"
+        style="display: none"
+      >
+        ストップ！
+      </button>
+    </div>
+
+    <h2>結果</h2>
+    <p id="result"><span class="result-text">????</span></p>
+
+    <div>
+      <h2>ルーレット設定</h2>
+      <div>
+        <table class="table" id="table">
+          <tr>
+            <th>色</th>
+            <th>項目名</th>
+            <th>割合</th>
+            <th>確率</th>
+            <th>削除</th>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="北海道" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="青森県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="岩手県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="宮城県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="秋田県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="山形県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="福島県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="茨城県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="栃木県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="群馬県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="埼玉県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="千葉県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="東京都" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td>
+              <input type="text" class="name" value="神奈川県" disabled />
+            </td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="新潟県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="富山県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="石川県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="福井県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="山梨県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="長野県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="岐阜県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="静岡県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="愛知県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="三重県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="滋賀県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="京都府" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="大阪府" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="兵庫県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="奈良県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td>
+              <input type="text" class="name" value="和歌山県" disabled />
+            </td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="鳥取県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="島根県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="岡山県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="広島県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="山口県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="徳島県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="香川県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="愛媛県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="高知県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="福岡県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="佐賀県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="長崎県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="熊本県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="大分県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="宮崎県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td>
+              <input type="text" class="name" value="鹿児島県" disabled />
+            </td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+          <tr class="item">
+            <td>
+              <div
+                class="color-indicator"
+                style="background-color: #000000"
+              ></div>
+            </td>
+            <td><input type="text" class="name" value="沖縄県" disabled /></td>
+            <td><input type="number" class="ratio" value="1" /></td>
+            <td class="probability"></td>
+            <td><button type="button" onclick="rmItem(this)">削除</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <style>
+      .color-indicator {
+        width: 10px;
+        height: 10px;
+      }
+      #result {
+        font-size: 40px;
+        font-weight: bold;
+      }
+    </style>
+  <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./app.js"></script>
+
+
+    <script>
+      function recalculate() {
+        var ratioSumJs = 0;
+        $(".ratio").each(function () {
+          ratioSumJs += $(this).val() - 0;
+        });
+        $(".item").each(function () {
+          var probability =
+            ($(this).find(".ratio").first().val() - 0) / ratioSumJs;
+          probability *= 100;
+          probability = probability.toFixed(3);
+          $(this)
+            .children(".probability")
+            .first()
+            .html(probability + "%");
+        });
+      }
+      $(".add").click(function () {
+        var add =
+          '<tr class="item"><td><div class="color-indicator" style="background-color:#000000;"></div></td><td><input type="text" class="name" value="項目"></td><td><input type="number" class="ratio" value="1"></td><td class="probability"></td><td><button type="button" onclick="rmItem(this)">削除</button></td></tr>';
+        $("#table").append(add);
+        recalculate();
+        if (mode == Mode.waiting) {
+          dataFetch();
+        }
+      });
+      function rmItem(e) {
+        if ($(".ratio").length > 2) {
+          $(e).parent().parent().remove();
+          recalculate();
+        }
+        if (mode == Mode.waiting) {
+          dataFetch();
+        }
+      }
+      $("#table").on("change", ".ratio", function () {
+        recalculate();
+        if (mode == Mode.waiting) {
+          dataFetch();
+        }
+      });
+    </script>
