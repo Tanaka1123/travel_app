@@ -1,0 +1,60 @@
+/* アプリ解説部分 */
+.title-contents {
+  text-align: center;
+  padding: 50px;
+}
+.title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+/* 旅しおり作成方法部分 */
+.select-reason-contents-right {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.right-image {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .select-reason-contents-left {
+    flex-direction: row;
+  }
+  .select-reason-contents-right {
+    flex-direction: row;
+  }
+
+  .right-image {
+    margin: auto;
+  }
+}
+/* 旅しおり作成ボタン部分 */
+.purchase-btn {
+  width: 120px;
+  background: rgb(128, 106, 242);
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.purchase-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.purchase-btn-icon {
+  width: 60%;
+}
