@@ -1,0 +1,16 @@
+  <div class="header" style="background-image: url(<%= asset_path('travel3.png') %>);">
+    <nav class="navbar">
+      <h2 class="logo"><a href="index.html">Travel</a></h2>
+      <ul class="menu">
+        <% if user_signed_in? %> <!-- ユーザーがログインしている場合の条件 -->
+          <li><a href="https://www.google.com/maps/search/" target="_blank">目的地検索</a></li>
+          <li><a href="siori.html">しおり</a></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :get, class: "logout" %></li>
+        <% else %> <!-- ユーザーが未ログインの場合の条件 -->
+          <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+          <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+   <script src="/path/to/script.js"></script>
