@@ -1,0 +1,34 @@
+<%= render "shared/header" %>
+
+<h1>New Travel</h1>
+
+<%= form_with(model: @bookmark, url: bookmarks_path, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :destination %>
+    <%= form.text_field :destination %>
+  </div>
+
+  <div class="field">
+    <%= form.label :departure_date %>
+    <%= form.date_field :departure_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :return_date %>
+    <%= form.date_field :return_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :members %>
+    <%= form.number_field :members %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Create Travel" %>
+  </div>
+<% end %>

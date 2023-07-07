@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          validates :nickname, presence: true, format: { with: /\A[a-z0-9]+\z/i, message: "is invalid. Input half-width characters." }
+         has_many :bookmarks
 end

@@ -1,0 +1,12 @@
+<%= render "shared/header" %>
+<h1>Myしおり</h1>
+
+<% @bookmarks.each do |bookmark| %>
+  <div class="bookmark">
+    <h2><%= bookmark.name %></h2>
+    <p><%= bookmark.destination %></p>
+    <p><%= bookmark.departure_date %></p>
+    <p><%= bookmark.return_date %></p>
+    <p><%= bookmark.members %></p>
+  </div>
+<% end %>

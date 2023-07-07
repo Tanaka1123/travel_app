@@ -73,3 +73,4 @@ end
 
 gem 'devise'
 gem 'gon'
+gem 'pry-rails'
