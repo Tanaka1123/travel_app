@@ -1,0 +1,31 @@
+.save-btn {
+  width: 120px;
+  background: rgb(128, 106, 242);
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 156px;
+  position: fixed;
+  padding: 15px;
+  color: #fff;
+}
+
+.save-btn:hover {
+  background: rgb(100, 80, 220);
+  cursor: pointer;
+}
+.add-btn {
+  width: 120px;
+  background: rgb(128, 106, 242);
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  color: #fff;
+}
+.add-btn:hover {
+  background: rgb(100, 80, 220);
+  cursor: pointer;
+}

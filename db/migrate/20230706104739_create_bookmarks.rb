@@ -7,6 +7,10 @@ class CreateBookmarks < ActiveRecord::Migration[7.0]
       t.integer :members
       t.string :name
       t.references :user, null: false, foreign_key: true
+      t.date :day, null: false
+      t.time :time, null: false
+      t.string :location, null: false
+      t.text :description, null: false
 
       t.timestamps
     end

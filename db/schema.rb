@@ -18,6 +18,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_104739) do
     t.integer "members"
     t.string "name"
     t.bigint "user_id", null: false
+    t.date "day", null: false
+    t.time "time", null: false
+    t.string "location", null: false
+    t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
