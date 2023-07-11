@@ -9,25 +9,40 @@ class BookmarksController < ApplicationController
   end
   
 
-  def create
 
-    @bookmark = Bookmark.new(bookmark_params)
-    if @bookmark.save
-      # 保存が成功した場合の処理
-      redirect_to root_path
-    else
-      # 保存が失敗した場合の処理
-      flash.now[:error] = @bookmark.errors.full_messages.join(", ")
-      render :new
+
+    def edit
+      @bookmark = Bookmark.find(params[:id])
     end
-  end
+
+    def save_form_data
+      form_data = JSON.parse(request.body.read)
+      
+      form_data.each do |data|
+        bookmark_data = data['bookmark']
+        bookmark = current_user.bookmarks.build(bookmark_data.except('bookmark_detail_attributes'))
+        bookmark_detail = bookmark.bookmark_details.build(bookmark_data['bookmark_detail_attributes'])
+      
+        unless bookmark.save && bookmark_detail.save
+          render json: { message: '保存に失敗しました' }, status: 422
+          return
+        end
+      end
+    
+      render json: { message: '保存が成功しました' }, status: 200
+    end
+  
 
   
 
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:destination, :departure_date, :return_date, :members, :name, :day, :time, :location, :description).merge(
-      user_id: current_user.id)
+    params.require(:bookmark).permit(:destination, :departure_date, :return_date, :members, :name).merge(user_id: current_user.id)
+  end
+  
+
+  def bookmark_detail_params
+    params.require(:bookmark).require(:bookmark_detail_attributes).permit(:day, :time, :location, :description)
   end
 end

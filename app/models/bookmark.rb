@@ -1,7 +1,10 @@
 class Bookmark < ApplicationRecord
   belongs_to :user
+  has_many :bookmark_details
 
-  validates :time, presence: true
-  validates :location, presence: true
-  validates :description, presence: true
+  accepts_nested_attributes_for :bookmark_details
+
 end
+
+ 
+

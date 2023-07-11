@@ -8,5 +8,6 @@
     <p><%= bookmark.departure_date %></p>
     <p><%= bookmark.return_date %></p>
     <p><%= bookmark.members %></p>
+       <%= link_to "Edit", edit_bookmark_path(bookmark), class: "btn btn-primary" %>
   </div>
 <% end %>

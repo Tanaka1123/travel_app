@@ -1,28 +1,26 @@
 <div class="additional-items">
   <!-- 初期の入力欄 -->
  <div class="input-field">
-    <div class="field">
+  <div class="field">
       <%= form.label :day %>
-     <%= form.date_field :day, value: Date.today %>
+      <%= form.date_field :"bookmark_detail_attributes[day]", value: Date.today %>
     </div>
 
     <div class="field">
       <%= form.label :time %>
-      <%= form.text_field :time, type: "time", class: "form-control" %>
+      <%= form.text_field :"bookmark_detail_attributes[time]", type: "time", class: "form-control" %>
     </div>
 
     <div class="field">
       <%= form.label :location %>
-      <%= form.text_field :location, class: "form-control" %>
+      <%= form.text_field :"bookmark_detail_attributes[location]", class: "form-control" %>
     </div>
 
     <div class="field">
       <%= form.label :description %>
-      <%= form.text_area :description, class: "form-control" %>
+      <%= form.text_area :"bookmark_detail_attributes[description]", class: "form-control" %>
     </div>
 
-  <button class="delete-btn">削除</button>
- 
-</div>
+    <button class="delete-btn">削除</button>
   </div>
-
+</div>

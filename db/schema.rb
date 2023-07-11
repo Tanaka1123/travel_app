@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_06_104739) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_10_014345) do
+  create_table "bookmark_details", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "bookmark_id", null: false
+    t.date "day", null: false
+    t.time "time", null: false
+    t.string "location", null: false
+    t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bookmark_id"], name: "index_bookmark_details_on_bookmark_id"
+  end
+
   create_table "bookmarks", charset: "utf8mb4", force: :cascade do |t|
     t.string "destination"
     t.date "departure_date"
@@ -18,10 +29,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_104739) do
     t.integer "members"
     t.string "name"
     t.bigint "user_id", null: false
-    t.date "day", null: false
-    t.time "time", null: false
-    t.string "location", null: false
-    t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
@@ -40,5 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_104739) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookmark_details", "bookmarks"
   add_foreign_key "bookmarks", "users"
 end

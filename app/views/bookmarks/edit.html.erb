@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+
+<h1>Edit Travel</h1>
+<div class="bookmark-title">
+  <%= form_with model: @bookmark, url: bookmarks_path, id: "additional-item-form" do |form| %>
+    <div class="field">
+      <%= form.label :destination %>
+      <%= form.text_field :destination %>
+    </div>
+
+    <div class="field">
+      <%= form.label :departure_date %>
+      <%= form.date_field :departure_date %>
+    </div>
+
+    <div class="field">
+      <%= form.label :return_date %>
+      <%= form.date_field :return_date %>
+    </div>
+
+    <div class="field">
+      <%= form.label :members %>
+      <%= form.number_field :members %>
+    </div>
+
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+     <%= render partial: "form", locals: { form: form } %>
+
+    <div class="actions">
+      <%= form.submit "Update", class: "btn btn-primary save-btn" %>
+    </div>
+  <% end %>
+</div>

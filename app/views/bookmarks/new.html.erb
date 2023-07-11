@@ -1,16 +1,6 @@
 <%= render "shared/header" %>
 
 <h1>New Travel</h1>
-<div class="bookmark-title">
-<%= form_with model: @bookmark, url: bookmarks_path, id: "bookmark-title" do |form| %>
-
-
-    <%= form.submit "Save", class: "btn btn-primary save-btn" %>
-
-<% end %>
-</div>
-
-<div class="additional-items">
 
   <%= form_with model: @bookmark, url: bookmarks_path, id: "additional-item-form" do |form| %>
     <div class="field">
@@ -38,16 +28,12 @@
     <%= form.text_field :name %>
   </div>
      <%= render partial: "form", locals: { form: form } %>
-        <div class="actions">
+
+          <div class="actions">
   <%= form.submit "Save", class: "btn btn-primary save-btn" %>
 </div>
-  <% end %>
-</div>
     <button class="add-btn">追加ボタン</button>
-     <div class="actions">
-
-</div>
-
+  <% end %>
 
 
 
