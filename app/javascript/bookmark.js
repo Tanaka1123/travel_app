@@ -53,13 +53,10 @@ document.addEventListener("click", function (event) {
   }
 });
 
-// フォームの入力値を保存する配列
-var formValues = [];
-
 // 保存ボタンをクリックした時の処理
 function saveForm() {
   // フォームの入力値を収集し、オブジェクトとして保存
-  var formElements = document.querySelectorAll(".field");
+  var formElements = document.querySelectorAll(".input-field");
   var formData = [];
 
   formElements.forEach(function (formElement) {
@@ -87,7 +84,7 @@ function saveForm() {
 
     formData.push(bookmarkData);
   });
-
+  formData = [Object.assign({}, ...formData)];
   console.log("formData:", formData);
 
   // Ajax リクエストを送信する処理を実装
