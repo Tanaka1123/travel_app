@@ -42,7 +42,6 @@ function sendFormData(formData) {
     }
   };
 
-  console.log(JSON.stringify(formData));
   xhr.send(JSON.stringify(formData));
 }
 
@@ -60,49 +59,39 @@ var formValues = [];
 // 保存ボタンをクリックした時の処理
 function saveForm() {
   // フォームの入力値を収集し、オブジェクトとして保存
-  var formElements = document.querySelectorAll(".input-field");
-  var formData = Array.from(formElements).map(function (formElement) {
-    var dayInput = formElement.querySelector(
-      "[name='bookmark_detail_attributes[day]']"
-    );
-    var timeInput = formElement.querySelector(
-      "[name='bookmark_detail_attributes[time]']"
-    );
-    var locationInput = formElement.querySelector(
-      "[name='bookmark_detail_attributes[location]']"
-    );
-    var descriptionInput = formElement.querySelector(
-      "[name='bookmark_detail_attributes[description]']"
-    );
+  var formElements = document.querySelectorAll(".field");
+  var formData = [];
+
+  formElements.forEach(function (formElement) {
+    var dayInput = formElement.querySelector(".day-input");
+    var timeInput = formElement.querySelector(".time-input");
+    var locationInput = formElement.querySelector(".location-input");
+    var descriptionInput = formElement.querySelector(".description-input");
+    var destinationInput = formElement.querySelector(".destination-input");
+    var departureDateInput = formElement.querySelector(".departure-date-input");
+    var returnDateInput = formElement.querySelector(".return-date-input");
+    var membersInput = formElement.querySelector(".members-input");
+    var nameInput = formElement.querySelector(".name-input");
 
     var bookmarkData = {
       day: dayInput ? dayInput.value : "",
       time: timeInput ? timeInput.value : "",
       location: locationInput ? locationInput.value : "",
       description: descriptionInput ? descriptionInput.value : "",
+      destination: destinationInput ? destinationInput.value : "",
+      departure_date: departureDateInput ? departureDateInput.value : "",
+      return_date: returnDateInput ? returnDateInput.value : "",
+      members: membersInput ? membersInput.value : "",
+      name: nameInput ? nameInput.value : "",
     };
 
-    console.log("dayInput value:", dayInput ? dayInput.value : "");
-    console.log("timeInput value:", timeInput ? timeInput.value : "");
-    console.log(
-      "locationInput value:",
-      locationInput ? locationInput.value : ""
-    );
-    console.log(
-      "descriptionInput value:",
-      descriptionInput ? descriptionInput.value : ""
-    );
-
-    return {
-      bookmark: bookmarkData,
-    };
+    formData.push(bookmarkData);
   });
 
-  // 配列に入力値を追加
-  formValues = formValues.concat(formData);
+  console.log("formData:", formData);
 
   // Ajax リクエストを送信する処理を実装
-  sendFormData(formValues);
+  sendFormData(formData);
 }
 
 // 追加ボタンをクリックしたときのイベントを監視します

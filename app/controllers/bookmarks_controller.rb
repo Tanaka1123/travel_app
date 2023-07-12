@@ -16,21 +16,38 @@ class BookmarksController < ApplicationController
     end
 
     def save_form_data
-      form_data = JSON.parse(request.body.read)
-      
+      form_data = params['_json']
       form_data.each do |data|
         bookmark_data = data['bookmark']
-        bookmark = current_user.bookmarks.build(bookmark_data.except('bookmark_detail_attributes'))
-        bookmark_detail = bookmark.bookmark_details.build(bookmark_data['bookmark_detail_attributes'])
-      
-        unless bookmark.save && bookmark_detail.save
+        bookmark_detail_data = data['bookmark_detail']
+  
+        bookmark = Bookmark.new(destination: bookmark_data['destination'],
+                                departure_date: bookmark_data['departure_date'],
+                                return_date: bookmark_data['return_date'],
+                                members: bookmark_data['members'],
+                                user_id: current_user.id)
+  
+        unless bookmark.save
+          render json: { message: '保存に失敗しました' }, status: 422
+          return
+        end
+  
+        bookmark_detail = bookmark.build_bookmark_detail(day: bookmark_detail_data['day'],
+                                                         time: bookmark_detail_data['time'],
+                                                         location: bookmark_detail_data['location'],
+                                                         description: bookmark_detail_data['description'])
+  
+        unless bookmark_detail.save
           render json: { message: '保存に失敗しました' }, status: 422
           return
         end
       end
-    
+  
       render json: { message: '保存が成功しました' }, status: 200
     end
+    
+    
+    
   
 
   
@@ -43,6 +60,6 @@ class BookmarksController < ApplicationController
   
 
   def bookmark_detail_params
-    params.require(:bookmark).require(:bookmark_detail_attributes).permit(:day, :time, :location, :description)
+    params.require(:bookmark).require(:bookmark_detail).permit(:day, :time, :location, :description)
   end
 end
