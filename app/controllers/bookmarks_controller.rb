@@ -32,13 +32,15 @@ class BookmarksController < ApplicationController
           return
         end
   
-        bookmark_detail = bookmark.build_bookmark_detail(day: bookmark_detail_data['day'],
-                                                         time: bookmark_detail_data['time'],
-                                                         location: bookmark_detail_data['location'],
-                                                         description: bookmark_detail_data['description'])
+
   
         unless bookmark_detail.save
           render json: { message: '保存に失敗しました' }, status: 422
+
+          bookmark_detail = bookmark.build_bookmark_detail(day: bookmark_detail_data['day'],
+            time: bookmark_detail_data['time'],
+            location: bookmark_detail_data['location'],
+            description: bookmark_detail_data['description'])
           return
         end
       end

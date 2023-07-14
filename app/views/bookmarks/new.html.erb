@@ -3,27 +3,27 @@
 <h1>New Travel</h1>
 
   <%= form_with model: @bookmark, url: bookmarks_path, id: "additional-item-form" do |form| %>
-  <div class="field">
+   <div class="field form-field">
     <%= form.label :destination %>
     <%= form.text_field :destination, class: "destination-input" %>
   </div>
 
-  <div class="field">
+  <div class="field form-field">
     <%= form.label :departure_date %>
     <%= form.date_field :departure_date, class: "departure-date-input" %>
   </div>
 
-  <div class="field">
+  <div class="field form-field">
     <%= form.label :return_date %>
     <%= form.date_field :return_date, class: "return-date-input" %>
   </div>
 
-  <div class="field">
+  <div class="field form-field">
     <%= form.label :members %>
     <%= form.number_field :members, class: "members-input" %>
   </div>
 
-  <div class="field">
+  <div class="field form-field">
     <%= form.label :name %>
     <%= form.text_field :name, class: "name-input" %>
   </div>
