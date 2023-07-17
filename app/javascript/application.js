@@ -4,4 +4,3 @@ import "controllers";
 import "travel";
 import "app";
 import "p5.min";
-import "bookmark";

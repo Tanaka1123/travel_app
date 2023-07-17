@@ -2,38 +2,148 @@
 
 <h1>New Travel</h1>
 
-  <%= form_with model: @bookmark, url: bookmarks_path, id: "additional-item-form" do |form| %>
-   <div class="field form-field">
+<%= form_with model: @bookmark, url: @bookmarks, id: "additional-item-form", local: true  do |form| %>
+  <div class="field">
     <%= form.label :destination %>
     <%= form.text_field :destination, class: "destination-input" %>
   </div>
 
-  <div class="field form-field">
+  <div class="field">
     <%= form.label :departure_date %>
     <%= form.date_field :departure_date, class: "departure-date-input" %>
   </div>
 
-  <div class="field form-field">
+  <div class="field">
     <%= form.label :return_date %>
     <%= form.date_field :return_date, class: "return-date-input" %>
   </div>
 
-  <div class="field form-field">
+  <div class="field">
     <%= form.label :members %>
     <%= form.number_field :members, class: "members-input" %>
   </div>
 
-  <div class="field form-field">
+  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, class: "name-input" %>
   </div>
-     <%= render partial: "form", locals: { form: form } %>
 
-          <div class="actions">
-  <%= form.submit "Save", class: "btn btn-primary save-btn" %>
+<div class="field">
+  <h3>行程情報2</h3>
+  <%= form.label :day_1, "日付" %>
+  <%= form.date_field :day_1, id: "day_1" %>
+  <br>
+  <%= form.label :time_1, "時間" %>
+  <%= form.time_select :time_1, id: "time_1" %>
+  <br>
+  <%= form.label :location_1, "場所" %>
+  <%= form.text_field :location_1, id: "location_1" %>
+  <br>
+  <%= form.label :description_1, "詳細" %>
+  <%= form.text_field :description_1, id: "description_1" %>
+  <br>
 </div>
-    <button class="add-btn">追加ボタン</button>
-  <% end %>
+
+<div class="field">
+  <h3>行程情報2</h3>
+  <%= form.label :day_2, "日付" %>
+  <%= form.date_field :day_2, id: "day_2" %>
+  <br>
+  <%= form.label :time_2, "時間" %>
+  <%= form.time_select :time_2, id: "time_2" %>
+  <br>
+  <%= form.label :location_2, "場所" %>
+  <%= form.text_field :location_2, id: "location_2" %>
+  <br>
+  <%= form.label :description_2, "詳細" %>
+  <%= form.text_field :description_2, id: "description_2" %>
+  <br>
+</div>
+
+<div class="field">
+  <h3>行程情報7</h3>
+  <%= form.label :day_3, "日付" %>
+  <%= form.date_field :day_3, id: "day_3" %>
+  <br>
+  <%= form.label :time_3, "時間" %>
+  <%= form.time_select :time_3, id: "time_3" %>
+  <br>
+  <%= form.label :location_3, "場所" %>
+  <%= form.text_field :location_3, id: "location_3" %>
+  <br>
+  <%= form.label :description_3, "詳細" %>
+  <%= form.text_field :description_3, id: "description_3" %>
+  <br>
+</div>
+
+<div class="field">
+  <h3>行程情報7</h3>
+  <%= form.label :day_4, "日付" %>
+  <%= form.date_field :day_4, id: "day_4" %>
+  <br>
+  <%= form.label :time_4, "時間" %>
+  <%= form.time_select :time_4, id: "time_4" %>
+  <br>
+  <%= form.label :location_4, "場所" %>
+  <%= form.text_field :location_4, id: "location_4" %>
+  <br>
+  <%= form.label :description_4, "詳細" %>
+  <%= form.text_field :description_4, id: "description_4" %>
+  <br>
+</div>
+
+<div class="field">
+  <h3>行程情報7</h3>
+  <%= form.label :day_5, "日付" %>
+  <%= form.date_field :day_5, id: "day_5" %>
+  <br>
+  <%= form.label :time_5, "時間" %>
+  <%= form.time_select :time_5, id: "time_5" %>
+  <br>
+  <%= form.label :location_5, "場所" %>
+  <%= form.text_field :location_5, id: "location_5" %>
+  <br>
+  <%= form.label :description_5, "詳細" %>
+  <%= form.text_field :description_5, id: "description_5" %>
+  <br>
+</div>
+
+<div class="field">
+  <h3>行程情報7</h3>
+  <%= form.label :day_6, "日付" %>
+  <%= form.date_field :day_6, id: "day_6" %>
+  <br>
+  <%= form.label :time_6, "時間" %>
+  <%= form.time_select :time_6, id: "time_6" %>
+  <br>
+  <%= form.label :location_6, "場所" %>
+  <%= form.text_field :location_6, id: "location_6" %>
+  <br>
+  <%= form.label :description_6, "詳細" %>
+  <%= form.text_field :description_6, id: "description_6" %>
+  <br>
+</div>
+
+<div class="field">
+  <h3>行程情報7</h3>
+  <%= form.label :day_7, "日付" %>
+  <%= form.date_field :day_7, id: "day_7" %>
+  <br>
+  <%= form.label :time_7, "時間" %>
+  <%= form.time_select :time_7, id: "time_7" %>
+  <br>
+  <%= form.label :location_7, "場所" %>
+  <%= form.text_field :location_7, id: "location_7" %>
+  <br>
+  <%= form.label :description_7, "詳細" %>
+  <%= form.text_field :description_7, id: "description_7" %>
+  <br>
+</div>
+
+<div class="actions">
+  <%= form.submit "保存", class: "save-btn" %>
+</div>
+<% end %>
 
 
 

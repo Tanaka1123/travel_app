@@ -8,5 +8,4 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "travel", to: "travel.js"
 pin "app", to: "app.js"
 pin "p5.min", to: "p5.min.js"
-pin "bookmark", to: "bookmark.js"
 
