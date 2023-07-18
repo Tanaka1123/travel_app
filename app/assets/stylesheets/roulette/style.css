@@ -1,13 +1,17 @@
-input[type="text"] {
-  width: 100px; /* 例として300ピクセルに設定 */
+input[type="roulette-text"] {
+  width: 300px; /* 例として300ピクセルに設定 */
 }
-.name {
+.roulette-name {
   font-size: 20px; /* 例として20ピクセルに設定 */
 }
 .header-name {
-  width: 100%;
+  width: 600px; /* 幅を600pxに設定 */
   height: 100%;
   background-color: aqua;
+  margin: 0 auto; /* 左右の余白を自動的に均等に設定してセンター揃え */
+  text-align: center; /* テキストをセンター揃え */
+  border: 5px rgb(162, 61, 61) solid;
+  border-radius: 5px;
 }
 h1 {
   text-align: center;

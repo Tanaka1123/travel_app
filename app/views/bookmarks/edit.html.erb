@@ -1,143 +1,152 @@
 <%= render "shared/header" %>
 
-<h1>Edit Travel</h1>
+<h1>しおり編集</h1>
 
 <%= form_with model: @bookmark, id: "additional-item-form", local: true  do |form| %>
-  <div class="field">
-    <%= form.label :destination %>
+<div class="form-wrapper">
+  <div class="field-bookmark">
+    <%= form.label :destination, "目的地", class: "input-field" %>
     <%= form.text_field :destination, class: "destination-input" %>
   </div>
 
-  <div class="field">
-    <%= form.label :departure_date %>
+  <div class="field-bookmark">
+    <%= form.label :departure_date, "出発日", class: "input-field" %>
     <%= form.date_field :departure_date, class: "departure-date-input" %>
   </div>
 
-  <div class="field">
-    <%= form.label :return_date %>
+  <div class="field-bookmark">
+    <%= form.label :return_date, "帰着日", class: "input-field" %>
     <%= form.date_field :return_date, class: "return-date-input" %>
   </div>
 
-  <div class="field">
-    <%= form.label :members %>
+  <div class="field-bookmark">
+    <%= form.label :members, "人数", class: "input-field" %>
     <%= form.number_field :members, class: "members-input" %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
+  <div class="field-bookmark">
+    <%= form.label :name, "しおり名", class: "input-field" %>
     <%= form.text_field :name, class: "name-input" %>
   </div>
+  </div>
 
-<div class="field">
-  <h3>行程情報1</h3>
-  <%= form.label :day_1, "日付" %>
+<div class="form-wrapper">
+<div class="field-bookmark">
+  <%= form.label :day_1, "日付", class: "input-field" %>
   <%= form.date_field :day_1, value: @bookmark.day_1 %>
   <br>
-  <%= form.label :time_1, "時間" %>
+  <%= form.label :time_1, "時間", class: "input-field" %>
   <%= form.time_select :time_1, id: "time_1", value: @bookmark.time_1 %>
   <br>
-  <%= form.label :location_1, "場所" %>
+  <%= form.label :location_1, "場所", class: "input-field" %>
   <%= form.text_field :location_1, id: "location_1", value: @bookmark.location_1 %>
   <br>
-  <%= form.label :description_1, "詳細" %>
-  <%= form.text_field :description_1, id: "description_1", value: @bookmark.description_1 %>
+  <%= form.label :description_1, "詳細", class: "input-field" %>
+  <%= form.text_field :description_1, id: "description_1", class: "description-field", value: @bookmark.description_1 %>
   <br>
 </div>
+</div>
 
-<div class="field">
-  <h3>行程情報2</h3>
-  <%= form.label :day_2, "日付" %>
+<div class="form-wrapper">
+<div class="field-bookmark">
+  <%= form.label :day_2, "日付", class: "input-field" %>
   <%= form.date_field :day_2, value: @bookmark.day_2 %>
   <br>
-  <%= form.label :time_2, "時間" %>
+  <%= form.label :time_2, "時間", class: "input-field" %>
   <%= form.time_select :time_2, id: "time_2", value: @bookmark.time_2 %>
   <br>
-  <%= form.label :location_2, "場所" %>
+  <%= form.label :location_2, "場所", class: "input-field" %>
   <%= form.text_field :location_2, id: "location_2", value: @bookmark.location_2 %>
   <br>
-  <%= form.label :description_2, "詳細" %>
-  <%= form.text_field :description_2, id: "description_2", value: @bookmark.description_2 %>
+  <%= form.label :description_2, "詳細", class: "input-field" %>
+  <%= form.text_field :description_2, id: "description_2", class: "description-field", value: @bookmark.description_2 %>
   <br>
 </div>
+</div>
 
-<div class="field">
-  <h3>行程情報3</h3>
-  <%= form.label :day_3, "日付" %>
+<div class="form-wrapper">
+<div class="field-bookmark">
+  <%= form.label :day_3, "日付", class: "input-field" %>
   <%= form.date_field :day_3, value: @bookmark.day_3 %>
   <br>
-  <%= form.label :time_3, "時間" %>
+  <%= form.label :time_3, "時間", class: "input-field" %>
   <%= form.time_select :time_3, id: "time_3", value: @bookmark.time_3 %>
   <br>
-  <%= form.label :location_3, "場所" %>
+  <%= form.label :location_3, "場所", class: "input-field" %>
   <%= form.text_field :location_3, id: "location_3", value: @bookmark.location_3 %>
   <br>
-  <%= form.label :description_3, "詳細" %>
-  <%= form.text_field :description_3, id: "description_3", value: @bookmark.description_3 %>
+  <%= form.label :description_3, "詳細", class: "input-field" %>
+  <%= form.text_field :description_3, id: "description_3", class: "description-field", value: @bookmark.description_3 %>
   <br>
 </div>
+</div>
 
-<div class="field">
-  <h3>行程情報4</h3>
-  <%= form.label :day_4, "日付" %>
+<div class="form-wrapper">
+<div class="field-bookmark">
+  <%= form.label :day_4, "日付", class: "input-field" %>
   <%= form.date_field :day_4, value: @bookmark.day_4 %>
   <br>
-  <%= form.label :time_4, "時間" %>
+  <%= form.label :time_4, "時間", class: "input-field" %>
   <%= form.time_select :time_4, id: "time_4", value: @bookmark.time_4 %>
   <br>
-  <%= form.label :location_4, "場所" %>
+  <%= form.label :location_4, "場所", class: "input-field" %>
   <%= form.text_field :location_4, id: "location_4", value: @bookmark.location_4 %>
   <br>
-  <%= form.label :description_4, "詳細" %>
-  <%= form.text_field :description_4, id: "description_4", value: @bookmark.description_4 %>
+  <%= form.label :description_4, "詳細", class: "input-field" %>
+  <%= form.text_field :description_4, id: "description_4", class: "description-field", value: @bookmark.description_4 %>
   <br>
 </div>
+</div>
 
-<div class="field">
-  <h3>行程情報5</h3>
-  <%= form.label :day_5, "日付" %>
+<div class="form-wrapper">
+<div class="field-bookmark">
+  <%= form.label :day_5, "日付", class: "input-field" %>
   <%= form.date_field :day_5, value: @bookmark.day_5 %>
   <br>
-  <%= form.label :time_5, "時間" %>
+  <%= form.label :time_5, "時間", class: "input-field" %>
   <%= form.time_select :time_5, id: "time_5", value: @bookmark.time_5 %>
   <br>
-  <%= form.label :location_5, "場所" %>
+  <%= form.label :location_5, "場所", class: "input-field" %>
   <%= form.text_field :location_5, id: "location_5", value: @bookmark.location_5 %>
   <br>
-  <%= form.label :description_5, "詳細" %>
-  <%= form.text_field :description_5, id: "description_5", value: @bookmark.description_5 %>
+  <%= form.label :description_5, "詳細", class: "input-field" %>
+  <%= form.text_field :description_5, id: "description_5", class: "description-field", value: @bookmark.description_5 %>
   <br>
 </div>
+</div>
 
-<div class="field">
-  <h3>行程情報6</h3>
-  <%= form.label :day_6, "日付" %>
+<div class="form-wrapper">
+<div class="field-bookmark">
+  <%= form.label :day_6, "日付", class: "input-field" %>
   <%= form.date_field :day_6, value: @bookmark.day_6 %>
   <br>
-  <%= form.label :time_6, "時間" %>
+  <%= form.label :time_6, "時間", class: "input-field" %>
   <%= form.time_select :time_6, id: "time_6", value: @bookmark.time_6 %>
   <br>
-  <%= form.label :location_6, "場所" %>
+  <%= form.label :location_6, "場所", class: "input-field" %>
   <%= form.text_field :location_6, id: "location_6", value: @bookmark.location_6 %>
   <br>
-  <%= form.label :description_6, "詳細" %>
-  <%= form.text_field :description_6, id: "description_6", value: @bookmark.description_6 %>
+  <%= form.label :description_6, "詳細", class: "input-field" %>
+  <%= form.text_field :description_6, id: "description_6", class: "description-field", value: @bookmark.description_6 %>
   <br>
 </div>
+</div>
 
-<div class="field">
-  <h3>行程情報7</h3>
-  <%= form.label :day_7, "日付" %>
+<div class="form-wrapper">
+<div class="field-bookmark">
+  <%= form.label :day_7, "日付", class: "input-field" %>
   <%= form.date_field :day_7, value: @bookmark.day_7 %>
   <br>
-  <%= form.label :time_7, "時間" %>
+  <%= form.label :time_7, "時間", class: "input-field" %>
   <%= form.time_select :time_7, id: "time_7", value: @bookmark.time_7 %>
   <br>
-  <%= form.label :location_7, "場所" %>
+  <%= form.label :location_7, "場所", class: "input-field" %>
   <%= form.text_field :location_7, id: "location_7", value: @bookmark.location_7 %>
   <br>
-  <%= form.label :description_7, "詳細" %>
-  <%= form.text_field :description_7, id: "description_7", value: @bookmark.description_7 %>
+  <%= form.label :description_7, "詳細", class: "input-field" %>
+  <%= form.text_field :description_7, id: "description_7", class: "description-field", value: @bookmark.description_7 %>
   <br>
+</div>
 </div>
 
 <div class="actions">

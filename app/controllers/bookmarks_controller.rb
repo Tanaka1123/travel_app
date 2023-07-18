@@ -1,4 +1,5 @@
 class BookmarksController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
     @bookmark = current_user.bookmarks
@@ -28,6 +29,16 @@ class BookmarksController < ApplicationController
       else
         render 'edit'
       end
+    end
+
+    def show
+      @bookmark = Bookmark.find(params[:id])
+    end
+
+    def destroy
+      @bookmark = Bookmark.find(params[:id])
+      @bookmark.destroy
+      redirect_to bookmarks_path, notice: "ブックマークを削除しました。"
     end
   
     private

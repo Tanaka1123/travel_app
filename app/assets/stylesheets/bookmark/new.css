@@ -2,42 +2,51 @@
 #additional-item-form {
   width: 80%;
   margin: 0 auto;
-  text-align: center; /* 中央揃え */
+}
+.input-field {
+  font-size: 25px;
 }
 
-/* フォーム内のフィールド要素のスタイル */
-.field {
-  margin-bottom: 20px;
-  text-align: center; /* 中央揃え */
+.form-wrapper {
+  border: 3px solid #ccc;
+  padding: 20px;
+  margin-bottom: 50px;
+  background-color: rgb(91, 182, 182);
+  border-radius: 10px;
 }
 
-/* 行程情報の見出しのスタイル */
-h2 {
-  margin-top: 30px;
-  text-align: center; /* 中央揃え */
+.field-bookmark {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-h3 {
+.field-bookmark .description-field {
+  flex: 1 1 100%;
+  height: 100px;
+  padding: 10px;
+
+  border-radius: 4px;
   margin-bottom: 10px;
-  text-align: center; /* 中央揃え */
 }
-
-/* 日付と時間の入力欄を横に並べるスタイル */
-.date-field,
-.time-field {
-  display: inline-block;
-  margin-right: 10px;
+.field-bookmark .time-select {
+  height: 100px;
+  font-size: large;
 }
-
-/* 保存ボタンのスタイル */
-.actions {
-  margin-top: 20px;
+.field-bookmark label,
+.field-bookmark input[type="text"],
+.field-bookmark input[type="date"],
+.field-bookmark input[type="number"],
+.field-bookmark select {
+  flex: 1 1 100%; /* 入力欄を100%の幅にする */
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 
 /* その他のスタイルは必要に応じて追加 */
 .save-btn {
   width: 120px;
-  background: rgb(128, 106, 242);
+  background: rgb(42, 0, 254);
   text-align: center;
   border-radius: 4%;
   font-size: 40px;
@@ -60,4 +69,5 @@ h3 {
 }
 .save-btn:hover {
   cursor: pointer;
+  background-color: rgb(216, 52, 137);
 }

@@ -1,3 +1,13 @@
+body {
+  background-color: #f2f2f2; /* 任意の背景色を指定 */
+}
+.service-title {
+  font-size: 50px;
+  color: #8e8282;
+}
+.service-explain {
+  font-size: 30px;
+}
 /* アプリ解説部分 */
 .title-contents {
   text-align: center;
@@ -6,35 +16,48 @@
 .title {
   text-align: center;
   padding-bottom: 30px;
+  font-size: 50px;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(76, 36, 36, 0.3);
 }
 /* 旅しおり作成方法部分 */
 .select-reason-contents-right {
   display: flex;
-  flex-direction: column;
-  text-align: center;
+  flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 50px;
 }
 
 .right-image {
+  margin-top: 50px;
   display: block;
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
+  max-width: 50%;
+  margin: 0 auto; /* 画像を中央寄せするために左右のマージンをオートに設定 */
+}
+.sub-text-container {
+  border: 3px rgb(20, 19, 19) solid;
+  padding: 10px; /* テキストとの間隔を設定 */
+  min-width: 50%;
 }
 
-@media (min-width: 768px) {
-  .select-reason-contents-left {
-    flex-direction: row;
-  }
-  .select-reason-contents-right {
-    flex-direction: row;
-  }
-
-  .right-image {
-    margin: auto;
-  }
+.sub-text-container ul {
+  list-style: none;
 }
+.reason-list-text {
+  border-bottom: solid 5px #e2e5e8;
+  text-align: left; /* テキストを左揃えにする */
+  margin-bottom: 10px;
+
+  font-size: 30px;
+}
+.list p {
+  text-align: left;
+}
+/* 画像のコンテナを flexbox として横並びにする */
+.image-container {
+  margin: 30px 0px;
+}
+
 /* 旅しおり作成ボタン部分 */
 .purchase-btn {
   width: 120px;
