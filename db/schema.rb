@@ -10,45 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_06_104739) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_18_085524) do
   create_table "bookmarks", charset: "utf8mb4", force: :cascade do |t|
     t.string "destination"
     t.date "departure_date"
     t.date "return_date"
     t.integer "members"
     t.string "name"
-    t.date "day_1"
-    t.datetime "time_1"
-    t.string "location_1"
-    t.text "description_1"
-    t.date "day_2"
-    t.datetime "time_2"
-    t.string "location_2"
-    t.text "description_2"
-    t.date "day_3"
-    t.datetime "time_3"
-    t.string "location_3"
-    t.text "description_3"
-    t.date "day_4"
-    t.datetime "time_4"
-    t.string "location_4"
-    t.text "description_4"
-    t.date "day_5"
-    t.datetime "time_5"
-    t.string "location_5"
-    t.text "description_5"
-    t.date "day_6"
-    t.datetime "time_6"
-    t.string "location_6"
-    t.text "description_6"
-    t.date "day_7"
-    t.datetime "time_7"
-    t.string "location_7"
-    t.text "description_7"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
+  create_table "schedules", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "bookmark_id", null: false
+    t.date "day"
+    t.time "time"
+    t.string "location"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bookmark_id"], name: "index_schedules_on_bookmark_id"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
@@ -65,4 +48,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_104739) do
   end
 
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "schedules", "bookmarks"
 end
