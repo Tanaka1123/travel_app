@@ -1,0 +1,87 @@
+body {
+  background-color: #f2f2f2; /* 任意の背景色を指定 */
+}
+@media (max-width: 767px) {
+  .menu li a {
+    font-size: 12px; /* 適切な文字サイズを指定 */
+  }
+}
+.service-title {
+  font-size: 50px;
+  color: #8e8282;
+}
+.service-explain {
+  font-size: 30px;
+}
+/* アプリ解説部分 */
+.title-contents {
+  text-align: center;
+  padding: 50px;
+}
+.title {
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 50px;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(76, 36, 36, 0.3);
+}
+/* 旅しおり作成方法部分 */
+.select-reason-contents-right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.right-image {
+  margin-top: 50px;
+  display: block;
+  max-width: 50%;
+  margin: 0 auto; /* 画像を中央寄せするために左右のマージンをオートに設定 */
+}
+.sub-text-container {
+  border: 3px rgb(20, 19, 19) solid;
+  padding: 10px; /* テキストとの間隔を設定 */
+  min-width: 50%;
+}
+
+.sub-text-container ul {
+  list-style: none;
+}
+.reason-list-text {
+  border-bottom: solid 5px #e2e5e8;
+  text-align: left; /* テキストを左揃えにする */
+  margin-bottom: 10px;
+
+  font-size: 30px;
+}
+.list p {
+  text-align: left;
+}
+/* 画像のコンテナを flexbox として横並びにする */
+.image-container {
+  margin: 30px 0px;
+}
+
+/* 旅しおり作成ボタン部分 */
+.purchase-btn {
+  width: 120px;
+  background: rgb(128, 106, 242);
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+.purchase-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.purchase-btn-icon {
+  width: 60%;
+}

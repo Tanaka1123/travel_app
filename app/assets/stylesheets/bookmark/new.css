@@ -1,0 +1,73 @@
+/* フォーム全体のスタイル */
+#additional-item-form {
+  width: 80%;
+  margin: 0 auto;
+}
+.input-field {
+  font-size: 25px;
+}
+
+.form-wrapper {
+  border: 3px solid #ccc;
+  padding: 20px;
+  margin-bottom: 50px;
+  background-color: rgb(91, 182, 182);
+  border-radius: 10px;
+}
+
+.field-bookmark {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.field-bookmark .description-field {
+  flex: 1 1 100%;
+  height: 100px;
+  padding: 10px;
+
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.field-bookmark .time-select {
+  height: 100px;
+  font-size: large;
+}
+.field-bookmark label,
+.field-bookmark input[type="text"],
+.field-bookmark input[type="date"],
+.field-bookmark input[type="number"],
+.field-bookmark select {
+  flex: 1 1 100%; /* 入力欄を100%の幅にする */
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* その他のスタイルは必要に応じて追加 */
+.save-btn {
+  width: 120px;
+  background: rgb(42, 0, 254);
+  text-align: center;
+  border-radius: 4%;
+  font-size: 40px;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.save-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 25px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.save-btn-icon {
+  width: 60%;
+}
+.save-btn:hover {
+  cursor: pointer;
+  background-color: rgb(216, 52, 137);
+}

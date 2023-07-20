@@ -1,0 +1,143 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <%# アプリ解説部分 %>
+<div class='title-contents'>
+  <div class='main-text-container'>
+    <h2 class='service-title'>
+      旅行行きたいけど場所決めれない！
+    </h2>
+    <p class='service-explain'>
+      Travelはだれでもかんたんに旅のしおりを作れる
+    </p>
+    <p class='service-explain'>
+      旅しおり作成アプリです
+    </p>
+  </div>
+</div>
+  <%# アプリ解説部分  %>
+
+  <%# 旅しおり作成方法部分 %>
+    <h2 class='title'>
+      Travelの使い方
+    </h2>
+  <div class='select-reason-contents-right'>
+    <div class="sub-text-container">
+      <ul class='reason-lists'>
+        <li class='list'>
+          <h3 class='reason-list-text'>1.新規登録しましょう</h3>
+            <p>
+              ・ニックネーム<br> 
+              ・Email<br>
+              ・Password<br>
+              入力すると登録ができるぞ
+            </p>
+        </li>
+      </ul>
+    </div>
+      <div class="image-container">
+        <img src="<%= asset_path('travel8.png') %>" alt="Travel Image" class="right-image">
+      </div>
+  </div>
+  <%# //旅しおり作成方法部分 %>
+
+    <%# 旅しおり作成方法部分 %>
+   <div class='select-reason-contents-right'>
+    <div class="sub-text-container">
+      <ul class='reason-lists'>
+        <li class='list'>
+ <h3 class='reason-list-text'>2.決めれない人はルーレットで決めよう</h3>
+            <p>
+              行ったことある都道府県は削除ボタンを<br>
+              押すことでルーレットからできるよ!個<br>
+              別に確率の変更もできるよ 
+            </p>
+
+        </li>
+      </ul>
+    </div>
+      <div class="image-container">
+        <img src="<%= asset_path('travel4.png') %>" alt="Travel Image" class="right-image">
+      </div>
+  </div>
+  <%# //旅しおり作成方法部分 %>
+
+
+    <%# 旅しおり作成方法部分 %>
+   <div class='select-reason-contents-right'>
+    <div class="sub-text-container">
+      <ul class='reason-lists'>
+        <li class='list'>
+          <h3 class='reason-list-text'>3.目的地検索を旅行先の情報を探そう</h3>
+            <p>
+              (例)　大阪観光など検索欄に入力<br>
+              評価高いものだけで絞ったりマップに位置が表示されるから<br>
+              効率よく回ることもできるよ
+            </p>
+        </li>
+      </ul>
+    </div>
+      <div class="image-container">
+        <img src="<%= asset_path('travel5.png') %>" alt="Travel Image" class="right-image">
+      </div>
+  </div>
+    <%# //旅しおり作成方法部分 %>
+
+     <%# 旅しおり作成方法部分 %>
+   <div class='select-reason-contents-right'>
+    <div class="sub-text-container">
+      <ul class='reason-lists'>
+        <li class='list'>
+          <h3 class='reason-list-text'>4.しおり新規作成をしていきましょう</h3>
+            <p>
+              ・目的地(都道府県)<br> 
+              ・出発日<br>
+              ・帰着日<br>
+              ・メンバー(人数)<br>
+              ・旅行名(しおりの名前)<br>
+              ・日付<br>
+              ・時間<br>
+              ・場所　目的地検索で調べた住所など書くとわかりやすくなるよ<br>
+              ・詳細　滞在時間ややりたいことをメモ代わりに書いておく<br>
+              ・保存ボタンを押すことで保存できるよ<br>
+            </p>
+        </li>
+      </ul>
+    </div>
+      <div class="image-container">
+        <img src="<%= asset_path('travel9.png') %>" alt="Travel Image" class="right-image">
+        <img src="<%= asset_path('travel11.png') %>" alt="Travel Image" class="right-image">
+      </div>
+  </div>
+    <%# //旅しおり作成方法部分 %>
+
+         <%# 旅しおり作成方法部分 %>
+   <div class='select-reason-contents-right'>
+    <div class="sub-text-container">
+      <ul class='reason-lists'>
+        <li class='list'>
+          <h3 class='reason-list-text'>5.しおりの編集もできるよ</h3>
+            <p>
+              ・作ったしおりはMyしおりから確認できるよ<br>
+            </p>
+        </li>
+      </ul>
+    </div>
+      <div class="image-container">
+        <img src="<%= asset_path('travel12.png') %>" alt="Travel Image" class="right-image">
+        
+      </div>
+  </div>
+    <%# //旅しおり作成方法部分 %>
+
+      <%# 旅しおり作成ボタン部分 %>
+<% if user_signed_in? %>
+  <!-- ログインしている場合の処理 -->
+  <%= link_to new_bookmark_path, class: "purchase-btn", style: "text-decoration: none;" do %>
+    <span class="purchase-btn-text">しおり作成</span>
+    <%= image_tag "click-1263.png", size: "185x50", class: "purchase-btn-icon" %>
+  <% end %>
+<% end %>
+
+      <%# //旅しおり作成ボタン部分 %>
+

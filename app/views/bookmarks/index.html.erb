@@ -1,0 +1,16 @@
+<%= render "shared/header" %>
+<h1>Myしおり</h1>
+
+<div class="bookmark-list">
+  <% @bookmark.each do |bookmark| %>
+    <div class="bookmark">
+      <div class="bookmark-header-wrapper">
+        <h2 class="bookmark-header"><%= bookmark.name %></h2>
+      </div>
+      <div class="actions">
+        <%= link_to "編集", edit_bookmark_path(bookmark), class: "btn btn-primary" %>
+        <%= link_to "削除", bookmark_path(bookmark), data: { turbo_method: :delete }, class: "btn btn-danger" %>
+      </div>
+    </div>
+  <% end %>
+</div>

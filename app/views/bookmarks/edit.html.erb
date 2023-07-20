@@ -1,0 +1,58 @@
+<%= render "shared/header" %>
+
+<h1>しおり編集</h1>
+
+<%= form_with model: @bookmark, id: "additional-item-form", local: true  do |form| %>
+<div class="form-wrapper">
+  <div class="field-bookmark">
+    <%= form.label :destination, "目的地", class: "input-field" %>
+    <%= form.text_field :destination, class: "destination-input" %>
+  </div>
+
+  <div class="field-bookmark">
+    <%= form.label :departure_date, "出発日", class: "input-field" %>
+    <%= form.date_field :departure_date, class: "departure-date-input" %>
+  </div>
+
+  <div class="field-bookmark">
+    <%= form.label :return_date, "帰着日", class: "input-field" %>
+    <%= form.date_field :return_date, class: "return-date-input" %>
+  </div>
+
+  <div class="field-bookmark">
+    <%= form.label :members, "人数", class: "input-field" %>
+    <%= form.number_field :members, class: "members-input" %>
+  </div>
+
+  <div class="field-bookmark">
+    <%= form.label :name, "しおり名", class: "input-field" %>
+    <%= form.text_field :name, class: "name-input" %>
+  </div>
+</div>
+
+<div class="form-wrapper">
+  <div class="field-bookmark">
+    <%= form.fields_for :schedules, @bookmark.schedules do |schedule_form| %>
+      <%= schedule_form.label :day, "日付", class: "input-field" %>
+      <%= schedule_form.date_field :day, id: "day" %>
+      <br>
+      <%= schedule_form.label :time, "時間", class: "input-field" %>
+      <%= schedule_form.time_select :time, id: "time", class: "time-select" %>
+      <br>
+      <%= schedule_form.label :location, "場所", class: "input-field" %>
+      <%= schedule_form.text_field :location, id: "location" %>
+      <br>
+      <%= schedule_form.label :description, "詳細", class: "input-field" %>
+      <%= schedule_form.text_field :description, id: "description", class: "description-field" %>
+      <br>
+    <% end %>
+  </div>
+</div>
+
+<div class="actions">
+  <%= form.submit "保存", class: "save-btn" %>
+</div>
+<% end %>
+
+
+  

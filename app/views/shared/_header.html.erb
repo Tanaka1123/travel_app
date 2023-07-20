@@ -1,0 +1,17 @@
+  <div class="header" style="background-image: url(<%= asset_path('travel3.png') %>);">
+    <nav class="navbar">
+      <h2 class="logo"><a href="/">Travel</a></h2>
+      <ul class="menu">
+        <% if user_signed_in? %> <!-- ユーザーがログインしている場合の条件 -->
+          <li><%= link_to 'ルーレット', roulette_path, class: "roulette", data: { turbo: false} %></li>
+          <li><a href="https://www.google.com/maps/search/" target="_blank">目的地検索</a></li>
+          <li><%= link_to 'Myしおり',   bookmarks_path, class: "bookmark-menu" %></li>
+          <li><%= link_to current_user.nickname, edit_user_registration_path, method: :put %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :get, class: "logout" %></li>
+        <% else %> <!-- ユーザーが未ログインの場合の条件 -->
+          <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+          <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>

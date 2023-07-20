@@ -1,0 +1,67 @@
+input[type="roulette-text"] {
+  width: 300px; /* 例として300ピクセルに設定 */
+}
+.roulette-name {
+  font-size: 20px; /* 例として20ピクセルに設定 */
+}
+.header-name {
+  width: 600px; /* 幅を600pxに設定 */
+  height: 100%;
+  background-color: aqua;
+  margin: 0 auto; /* 左右の余白を自動的に均等に設定してセンター揃え */
+  text-align: center; /* テキストをセンター揃え */
+  border: 5px rgb(162, 61, 61) solid;
+  border-radius: 5px;
+}
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+.container {
+  width: 500px;
+  position: relative;
+  background-color: aqua;
+}
+
+#canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.bottun {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+  font-size: 50px;
+}
+.reset {
+  font-size: 40px;
+}
+.start {
+  font-size: 40px;
+}
+.stop {
+  font-size: 40px;
+}
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#result {
+  display: flex;
+  justify-content: center;
+}
+
+.result-text {
+  padding: 10px;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
