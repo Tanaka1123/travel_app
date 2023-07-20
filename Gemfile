@@ -76,3 +76,7 @@ end
 
 gem 'devise'
 gem 'pry-rails'
+
+group :production do
+  gem 'unicorn', '6.1.0'
+end

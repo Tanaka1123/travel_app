@@ -1,5 +1,7 @@
 class BookmarksController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :set_bookmark, only: [:edit, :update, :show, :destroy]
+  before_action :check_owner, only: [:edit, :update, :destroy]
 
   def index
     @bookmark = current_user.bookmarks
@@ -19,7 +21,6 @@ class BookmarksController < ApplicationController
     end
     
     def edit
-      @bookmark = Bookmark.find(params[:id])
     end
 
  def update
@@ -32,7 +33,6 @@ class BookmarksController < ApplicationController
 end
 
     def show
-      @bookmark = Bookmark.find(params[:id])
     end
 
     def destroy
@@ -42,6 +42,16 @@ end
     end
   
     private
+
+    def set_bookmark
+      @bookmark = Bookmark.find(params[:id])
+    end
+  
+    def check_owner
+      unless @bookmark.user == current_user
+        redirect_to root_path, alert: 'Access denied.'
+      end
+    end
   
     def bookmark_params
       params.require(:bookmark).permit(  :destination, :departure_date, :return_date, :members, :name,
