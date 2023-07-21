@@ -1,9 +1,12 @@
 body {
-  background-color: #f2f2f2; /* 任意の背景色を指定 */
+  background-color: #f2f2f2;
 }
 @media (max-width: 767px) {
+  .logo a {
+    font-size: 40px;
+  }
   .menu li a {
-    font-size: 12px; /* 適切な文字サイズを指定 */
+    font-size: 10px;
   }
 }
 .service-title {
