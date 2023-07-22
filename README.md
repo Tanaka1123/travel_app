@@ -2,7 +2,7 @@
 
 ---
 
-Travel
+VoyageMark
 
 ## アプリケーションの概要
 
