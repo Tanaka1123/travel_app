@@ -1,6 +1,6 @@
   <div class="header" style="background-image: url(<%= asset_path('travel3.png') %>);">
     <nav class="navbar">
-      <h2 class="logo"><a href="/">VoyageMark</a></h2>
+      <h2 class="logo"><a href="/">Travel</a></h2>
       <ul class="menu">
         <% if user_signed_in? %> <!-- ユーザーがログインしている場合の条件 -->
           <li><%= link_to 'ルーレット', roulette_path, class: "roulette", data: { turbo: false} %></li>
