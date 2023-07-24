@@ -20,8 +20,6 @@ http://52.192.74.145/
 
 ---
 
-・Basic 認証パスワード: 2222<br>
-・Basic 認証 ID: admin<br>
 ・メールアドレス :test@test.com<br>
 ・パスワード :T123456
 
