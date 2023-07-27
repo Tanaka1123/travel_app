@@ -1,0 +1,36 @@
+.chat__messages {
+  padding: 16px;
+  background-color: #ffffe0;
+  border-radius: 20px;
+  width: 50%;
+  margin: 0 auto;
+}
+.chat-example {
+  text-align: center;
+  margin-top: 30px;
+  opacity: 0.5;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.form-control.chat__input {
+  width: 40%;
+  height: 50px;
+}
+.input-group-append {
+  padding-left: 30px;
+}
+.chat__submit {
+  height: 50px;
+  width: 50px;
+}
+.chat__submit:hover {
+  background-color: #98fb98;
+}
+.chat-note {
+  text-align: center;
+  margin-top: 30px;
+  opacity: 0.5;
+}

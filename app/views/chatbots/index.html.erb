@@ -1,0 +1,54 @@
+
+  <%= render "shared/header" %>
+  <div id="chat-messages" class="chat__messages" style="height: 400px; max-height: 400px; overflow-y: scroll;"></div>
+  <div class="chat-example">入力例) 〇〇県 おすすめ観光 予算〇〇円 滞在期間 〇日</div>
+    <form id="chat-form" class="form">
+      <input type="text" class="form-control chat__input" id="chat-input" placeholder="聞きたい内容を入力してください。">
+        <div class="input-group-append">
+          <button type="submit" id="chat-btn" class="chat__submit">送る</button>
+    </form>
+        </div>
+  <div class="chat-note">※返信に50秒ほどかかります</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('chat-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const input = document.getElementById('chat-input').value;
+      document.getElementById('chat-btn').classList.add('d-none');
+
+
+      fetch('/chatbots', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+        },
+        body: JSON.stringify({ input: input })
+      })
+        .then(response => response.json())
+        .then(data => {
+          const response = data.response;
+          displayResponse(response); // 回答を表示する関数を呼び出す
+          document.getElementById('chat-input').value = '';
+
+          document.getElementById('chat-btn').classList.remove('d-none');
+        })
+        .catch(error => {
+          console.log("Error:", error);
+          const responseMessage = '<div class="chat__message chat__message--bot alert alert-danger" role="alert"><i class="fas fa-robot chat__bot-icon"></i><p>' + error + '</p></div>';
+          const inputMessage = '<div class="chat__message chat__message--user alert alert-info" role="alert"><p>' + input + '</p></div>';
+          document.getElementById('chat-messages').append(responseMessage, inputMessage);
+
+          document.getElementById('chat-btn').classList.remove('d-none');
+        });
+    });
+  });
+
+  // 回答を表示する関数
+  function displayResponse(response) {
+    const responseMessage = response 
+    document.getElementById('chat-messages').append(responseMessage);
+  }
+</script>
