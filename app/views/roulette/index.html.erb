@@ -610,6 +610,15 @@
       </div>
     </div>
 
+<%# 旅しおり作成ボタン部分 %>
+<% if user_signed_in? %>
+  <!-- ログインしている場合の処理 -->
+  <%= link_to new_bookmark_path, class: "purchase-btn", style: "text-decoration: none;" do %>
+    <span class="purchase-btn-text">しおり作成</span>
+    <%= image_tag "click-1263.png", size: "185x50", class: "purchase-btn-icon" %>
+  <% end %>
+<% end %>
+
     <style>
       .color-indicator {
         width: 10px;

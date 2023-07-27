@@ -46,13 +46,12 @@
     <div class="sub-text-container">
       <ul class='reason-lists'>
         <li class='list'>
- <h3 class='reason-list-text'>2.決めれない人はルーレットで決めよう</h3>
+          <h3 class='reason-list-text'>2.決めれない人はルーレットで決めよう</h3>
             <p>
               行ったことある都道府県は削除ボタンを<br>
               押すことでルーレットからできるよ!個<br>
               別に確率の変更もできるよ 
             </p>
-
         </li>
       </ul>
     </div>
@@ -130,7 +129,7 @@
   </div>
     <%# //旅しおり作成方法部分 %>
 
-      <%# 旅しおり作成ボタン部分 %>
+<%# 旅しおり作成ボタン部分 %>
 <% if user_signed_in? %>
   <!-- ログインしている場合の処理 -->
   <%= link_to new_bookmark_path, class: "purchase-btn", style: "text-decoration: none;" do %>
@@ -139,5 +138,4 @@
   <% end %>
 <% end %>
 
-      <%# //旅しおり作成ボタン部分 %>
 
