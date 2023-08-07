@@ -86,5 +86,6 @@ end
 gem 'devise'
 gem 'pry-rails'
 gem 'ruby-openai'
+gem 'rails-i18n'
 
 
